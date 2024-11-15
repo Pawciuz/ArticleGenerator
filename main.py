@@ -26,9 +26,7 @@ class ArticleProcessor:
            Pod każdą grafiką dodaj odpowiedni podpis używając tagu <figcaption>
         3. Nie dodawaj CSS ani JavaScript
         4. Nie dodawaj tagów html, head, body - zwróć tylko zawartość sekcji body
-
         Oto artykuł do przetworzenia:
-
         {content}
         """
 
@@ -60,14 +58,12 @@ def main():
 
     processor = ArticleProcessor(api_key)
 
-    input_file = "article.txt"  # Zmień na właściwą ścieżkę
+    input_file = "article.txt"
     output_file = "artykul.html"
 
     try:
         content = processor.read_article(input_file)
-
         html_content = processor.process_article(content)
-
         processor.save_html(html_content, output_file)
 
         print(f"Artykuł został pomyślnie przetworzony i zapisany w {output_file}")
